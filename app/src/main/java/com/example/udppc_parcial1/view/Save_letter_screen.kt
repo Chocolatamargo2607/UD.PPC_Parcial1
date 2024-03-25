@@ -13,9 +13,13 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldColors
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -28,9 +32,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.udppc_parcial1.view_model.navegation.App_screens
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Save_letter_screen(navController: NavController){
     var name_song by remember {
@@ -43,7 +49,7 @@ fun Save_letter_screen(navController: NavController){
         modifier = androidx.compose.ui.Modifier.padding(16.dp)
     ) {
 
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = { navController.navigate(route = App_screens.Index.router)}) {
             Icon(
                 imageVector = Icons.Default.ArrowBack,
                 contentDescription = null
@@ -67,12 +73,17 @@ fun Save_letter_screen(navController: NavController){
             },
             label = {
                 Text(text = "Name Song")
-            }
+            },
+            colors = TextFieldDefaults.textFieldColors(
+                containerColor = Color.White,
+                unfocusedIndicatorColor = MaterialTheme.colorScheme.primary
+
+            )
 
 
         )
         Spacer(modifier = androidx.compose.ui.Modifier.height(16.dp))
-        Text(text = "Lyric of the Song",color = Color.LightGray)
+        Text(text = "Lyric of the Song")
         Spacer(modifier = androidx.compose.ui.Modifier.height(16.dp))
         TextField(
             value = letter,
@@ -81,7 +92,12 @@ fun Save_letter_screen(navController: NavController){
             },
             placeholder = {
                 Text(text = "Write the lyrics")
-            }
+            },
+            colors = TextFieldDefaults.textFieldColors(
+                containerColor = Color.White,
+                unfocusedIndicatorColor = MaterialTheme.colorScheme.primary
+
+            )
         )
         Spacer(modifier = androidx.compose.ui.Modifier.height(16.dp))
         Button(onClick = { /*TODO*/ }) {

@@ -28,6 +28,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.udppc_parcial1.view_model.navegation.App_screens
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -48,18 +49,19 @@ fun Index(navController: NavController){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ){
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = { navController.navigate(route = App_screens.Save_letter_screen.router) })
+        {
             Text(text = "Save New Song")
         }
         Row(
             modifier = Modifier.padding(16.dp)
         ) {
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = { navController.navigate(route = App_screens.Practice_maraca_screen.router)}) {
                 Text(text = "Practice Maraca")
             }
             Spacer(modifier = Modifier.width(16.dp))
-            Button(onClick = { /*TODO*/ }) {
-                Text(text = "Practice Tambor/Drum")
+            Button(onClick = { navController.navigate(route = App_screens.Practice_tambor_screen.router)}) {
+                Text(text = "Practice Drum")
             }
         }
 
