@@ -2,9 +2,6 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="GreetingPreview">
-        <State />
-      </entry>
       <entry key="Index_preview">
         <State />
       </entry>
@@ -23,6 +20,12 @@
           </runningDeviceTargetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2024-03-24T02:04:38.914308700Z" />
         </State>
+      </entry>
+      <entry key="Practice_maraca_screen_preview">
+        <State />
+      </entry>
+      <entry key="Practice_tambor_screen_preview">
+        <State />
       </entry>
       <entry key="Save_letter_screen_preview">
         <State />

@@ -59,7 +59,7 @@ fun Index(navController: NavController){
             }
             Spacer(modifier = Modifier.width(16.dp))
             Button(onClick = { /*TODO*/ }) {
-                Text(text = "Practice Tambor")
+                Text(text = "Practice Tambor/Drum")
             }
         }
 
