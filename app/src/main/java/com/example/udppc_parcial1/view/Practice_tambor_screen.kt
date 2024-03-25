@@ -65,7 +65,7 @@ fun Practice_tambor_screen(navController: NavController){
         )
         Spacer(modifier = Modifier.height(36.dp))
 
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = {navController.navigate(route = App_screens.Tambor_screen.router)})  {
             Text(text = "Start practice \uD83E\uDD41 ‼\uFE0F")
         }
 

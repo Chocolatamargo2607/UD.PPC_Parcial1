@@ -67,7 +67,7 @@ fun Practice_maraca_screen(navController: NavController){
               )
         Spacer(modifier = Modifier.height(36.dp))
 
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = {navController.navigate(route = App_screens.Maraca_screen.router)}) {
             Text(text = "Start practice ‼\uFE0F")
         }
 
