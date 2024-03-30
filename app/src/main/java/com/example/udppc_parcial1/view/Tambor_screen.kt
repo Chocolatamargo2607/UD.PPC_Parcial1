@@ -1,9 +1,8 @@
 package com.example.udppc_parcial1.view
 
 import android.media.MediaPlayer
-import android.widget.ImageButton
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,9 +17,11 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -34,7 +35,11 @@ import com.example.udppc_parcial1.view_model.navegation.App_screens
 @Composable
 fun Tambor_screen(navController: NavController){
     val context = LocalContext.current
-    val mp: MediaPlayer = MediaPlayer.create(context,R.raw.song_tambor)
+    val oneTapMediaPlayer = MediaPlayer.create(context, R.raw.drum_one_sound)
+
+    val doubleTapMediaPlayer = remember {
+        MediaPlayer.create(context, R.raw.drum_two_sound)
+    }
     Box(modifier = Modifier.fillMaxSize()){
         Image(
             painter = painterResource(id = R.drawable.tambor),
@@ -42,8 +47,19 @@ fun Tambor_screen(navController: NavController){
             modifier = Modifier
                 .align(Alignment.Center)
                 .size(260.dp)
-                .clickable {mp.start() },
-            contentDescription = "Fondo",
+
+                .pointerInput(Unit) {
+                    detectTapGestures(
+                        onDoubleTap = {
+                            doubleTapMediaPlayer.start()
+                        }
+                        , onTap = {
+                            oneTapMediaPlayer.start()
+                        }
+
+                    )
+                },
+            contentDescription = "Fondo"
         )
     }
     Row(){
