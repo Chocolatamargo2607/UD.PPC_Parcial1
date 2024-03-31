@@ -82,6 +82,7 @@ fun Maraca_screen_preview() {
 }
 
 @Composable
+//funcion para el sonido de la maraca
 fun ShakeSound() {
     val context = LocalContext.current
     val sensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
