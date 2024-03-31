@@ -41,6 +41,7 @@ import kotlin.math.absoluteValue
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+//Pantalla de la maraca
 fun Maraca_screen(navController: NavController){
 
     Box(modifier = Modifier.fillMaxSize()){

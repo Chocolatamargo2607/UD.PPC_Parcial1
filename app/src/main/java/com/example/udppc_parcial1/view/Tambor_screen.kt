@@ -33,6 +33,7 @@ import com.example.udppc_parcial1.view_model.navegation.App_screens
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+//Pantalla del tambor
 fun Tambor_screen(navController: NavController){
     val context = LocalContext.current
     val oneTapMediaPlayer = MediaPlayer.create(context, R.raw.drum_one_sound)

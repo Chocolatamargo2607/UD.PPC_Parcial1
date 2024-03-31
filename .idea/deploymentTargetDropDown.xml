@@ -2,35 +2,23 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="Index_preview">
-        <State />
-      </entry>
       <entry key="MainActivity">
-        <State />
-      </entry>
-      <entry key="Practice_maraca_screen_preview">
-        <State />
-      </entry>
-      <entry key="Practice_tambor_screen_preview">
-        <State />
-      </entry>
-      <entry key="Save_letter_screen_preview">
         <State />
       </entry>
       <entry key="app">
         <State>
-          <runningDeviceTargetSelectedWithDropDown>
+          <targetSelectedWithDropDown>
             <Target>
-              <type value="RUNNING_DEVICE_TARGET" />
+              <type value="QUICK_BOOT_TARGET" />
               <deviceKey>
                 <Key>
-                  <type value="SERIAL_NUMBER" />
-                  <value value="32048da6aeea418b" />
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\USUARIO\.android\avd\Pixel_3a_API_34_extension_level_7_x86_64.avd" />
                 </Key>
               </deviceKey>
             </Target>
-          </runningDeviceTargetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-03-23T23:25:24.924526400Z" />
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-03-25T19:46:46.859984Z" />
         </State>
       </entry>
     </value>

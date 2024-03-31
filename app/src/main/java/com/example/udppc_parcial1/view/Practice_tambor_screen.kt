@@ -30,6 +30,7 @@ import com.example.udppc_parcial1.view_model.navegation.App_screens
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+//Generar la pantalla de practica con tambor
 fun Practice_tambor_screen(navController: NavController){
 
     val context = LocalContext.current.applicationContext

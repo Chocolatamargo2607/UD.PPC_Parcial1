@@ -32,6 +32,7 @@ import com.example.udppc_parcial1.view_model.navegation.App_screens
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
+//Genera la pantalla de practica con maraca
 fun Practice_maraca_screen(navController: NavController){
 
     val context = LocalContext.current.applicationContext
