@@ -47,6 +47,7 @@ import com.example.udppc_parcial1.view_model.navegation.App_screens
 fun Index(navController: NavController){
 
     val context = LocalContext.current
+    //link repo
     val repository = "https://github.com/Chocolatamargo2607/UD.PPC_Parcial1"
     val repositoryintent = remember { Intent(Intent.ACTION_VIEW, Uri.parse(repository))}
     var query by remember {mutableStateOf("")}
