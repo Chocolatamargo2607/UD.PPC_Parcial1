@@ -62,9 +62,13 @@ fun Practice_maraca_screen(navController: NavController){
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ){
-
-        Text(text = "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker," +
-                " el cual incluye versiones de Lorem Ipsum.",color = Color.Black
+        //Texto explicativo
+        Text(text = "Instructivo: \n" +
+                "- En la parte inferior verás un botón llamado /Start Practice/. Presiona este botón para activar la función de las maracas.\n" +
+                "- Una vez activadas las maracas, sostén tu dispositivo móvil con firmeza y agítalo de manera rápida.\n" +
+                "- La aplicación detectará la sacudida y reproducirá el sonido característico de las maracas.\n" +
+                "- Si deseas desactivar la función de las maracas, simplemente vuelve a la pantalla principal. \n" +
+                "¡Ahora estás listo para disfrutar de la experiencia de tener unas maracas virtuales en tu dispositivo móvil! Diviértete agitando tu teléfono y creando ritmos únicos.",color = Color.Black
         )
         Spacer(modifier = Modifier.height(36.dp))
 
