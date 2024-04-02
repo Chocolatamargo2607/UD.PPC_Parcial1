@@ -1,5 +1,6 @@
 package com.example.udppc_parcial1.view
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -26,6 +27,7 @@ import androidx.compose.runtime.CompositionLocalContext
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -38,6 +40,7 @@ import com.example.udppc_parcial1.dataManagement.Helper
 import com.example.udppc_parcial1.dataManagement.SongDTO
 import com.example.udppc_parcial1.dataManagement.SongService
 import com.example.udppc_parcial1.view_model.navegation.App_screens
+import kotlinx.coroutines.launch
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -46,10 +49,11 @@ import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Save_letter_screen(navController: NavController){
+fun Save_letter_screen(navController: NavController) {
 
-    var context= LocalContext.current
+    var context = LocalContext.current
     val songService = SongService(Helper(context))
+    val scope = rememberCoroutineScope()
 
     var name_song by remember {
         mutableStateOf("")
@@ -61,7 +65,7 @@ fun Save_letter_screen(navController: NavController){
         modifier = androidx.compose.ui.Modifier.padding(16.dp)
     ) {
 
-        Button(onClick = { navController.navigate(route = App_screens.Index.router)}) {
+        Button(onClick = { navController.navigate(route = App_screens.Index.router) }) {
             Icon(
                 imageVector = Icons.Default.ArrowBack,
                 contentDescription = null
@@ -76,7 +80,7 @@ fun Save_letter_screen(navController: NavController){
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
-    ){
+    ) {
 
         TextField(
             value = name_song,
@@ -117,12 +121,26 @@ fun Save_letter_screen(navController: NavController){
             val calendar = Calendar.getInstance()
             val format = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
             val date = format.format(calendar.time)
-            var song= SongDTO(0,name_song,date,lyric)
+            var song = SongDTO(0, name_song, date, lyric)
 
             var save = songService.save(song)
+            if (save != -1L) {
+                scope.launch {
+                    Toast.makeText(
+                        context, "Canción guardada exitosamente", Toast.LENGTH_SHORT
+                    ).show()
+                }
+            } else {
+                scope.launch {
+                    Toast.makeText(
+                        context, "Error al guardar la canción", Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+            name_song = ""
+            lyric = ""
 
         })
-
 
 
         {
