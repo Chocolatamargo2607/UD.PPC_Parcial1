@@ -5,14 +5,13 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.example.udppc_parcial1.database.Constants
 import com.example.udppc_parcial1.model.SongEntity
 
 @Dao
 interface SongDao {
-    @Query("SELECT * FROM ${Constants.song_table_name}")
+    @Query("SELECT * FROM Song")
     fun getAll():List<SongEntity>
-    @Query("SELECT * FROM ${Constants.song_table_name} WHERE songId IN (:SongIds)")
+    @Query("SELECT * FROM Song WHERE songId IN (:SongIds)")
     fun loadAllByIds(SongIds:IntArray):List<SongEntity>
     @Insert
     fun insert(vararg Songs: SongEntity)

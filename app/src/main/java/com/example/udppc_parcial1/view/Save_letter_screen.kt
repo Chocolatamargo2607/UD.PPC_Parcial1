@@ -32,13 +32,17 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.example.udppc_parcial1.database.AppDatabase
+import com.example.udppc_parcial1.model.SongEntity
 import com.example.udppc_parcial1.view_model.navegation.App_screens
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Save_letter_screen(navController: NavController){
+fun Save_letter_screen(navController: NavController, db:AppDatabase){
+
     var name_song by remember {
         mutableStateOf("")
     }
@@ -100,7 +104,7 @@ fun Save_letter_screen(navController: NavController){
             )
         )
         Spacer(modifier = androidx.compose.ui.Modifier.height(16.dp))
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = { db.songDao().insert(SongEntity( songName = name_song , songLyrics = letter)) }) {
             Text(text = "Save lyric")
         }
 
@@ -111,5 +115,8 @@ fun Save_letter_screen(navController: NavController){
 @Preview(showBackground = true)
 @Composable
 fun Save_letter_screen_preview() {
-    Save_letter_screen(NavController(LocalContext.current))
+    val navController = rememberNavController()
+    val context = LocalContext.current
+    val db = AppDatabase.getInstance(context)
+    Save_letter_screen(navController = navController, db = db)
 }
