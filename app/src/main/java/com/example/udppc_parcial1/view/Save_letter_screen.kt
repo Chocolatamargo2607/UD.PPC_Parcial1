@@ -20,7 +20,9 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
+
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalContext
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -32,17 +34,27 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.udppc_parcial1.dataManagement.Helper
+import com.example.udppc_parcial1.dataManagement.SongDTO
+import com.example.udppc_parcial1.dataManagement.SongService
 import com.example.udppc_parcial1.view_model.navegation.App_screens
 import org.intellij.lang.annotations.JdkConstants.HorizontalAlignment
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun Save_letter_screen(navController: NavController){
+
+    var context= LocalContext.current
+    val songService = SongService(Helper(context))
+
     var name_song by remember {
         mutableStateOf("")
     }
-    var letter by remember {
+    var lyric by remember {
         mutableStateOf("")
     }
     Row(
@@ -86,9 +98,9 @@ fun Save_letter_screen(navController: NavController){
         Text(text = "Lyric of the Song")
         Spacer(modifier = androidx.compose.ui.Modifier.height(16.dp))
         TextField(
-            value = letter,
+            value = lyric,
             onValueChange = {
-                letter = it
+                lyric = it
             },
             placeholder = {
                 Text(text = "Write the lyrics")
@@ -100,8 +112,22 @@ fun Save_letter_screen(navController: NavController){
             )
         )
         Spacer(modifier = androidx.compose.ui.Modifier.height(16.dp))
-        Button(onClick = { /*TODO*/ }) {
+        Button(onClick = {
+
+            val calendar = Calendar.getInstance()
+            val format = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+            val date = format.format(calendar.time)
+            var song= SongDTO(0,name_song,date,lyric)
+
+            var save = songService.save(song)
+
+        })
+
+
+
+        {
             Text(text = "Save lyric")
+
         }
 
     }
