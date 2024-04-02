@@ -67,8 +67,6 @@ fun Practice_maraca_screen(navController: NavController){
                 "- En la parte inferior verás un botón llamado /Start Practice/. Presiona este botón para activar la función de las maracas.\n" +
                 "- Una vez activadas las maracas, sostén tu dispositivo móvil con firmeza y agítalo de manera rápida.\n" +
                 "- La aplicación detectará la sacudida y reproducirá el sonido característico de las maracas.\n" +
-                "- Si la aplicación no detecta tus sacudidas, es posible que necesites ajustar la sensibilidad. Para hacerlo, ve a la configuración de la aplicación y busca la opción de /Sensibilidad de Agitado/.\n" +
-                "- Puedes aumentar o disminuir la sensibilidad según tus preferencias y el tipo de dispositivo que estés utilizando. \n" +
                 "- Si deseas desactivar la función de las maracas, simplemente vuelve a la pantalla principal. \n" +
                 "¡Ahora estás listo para disfrutar de la experiencia de tener unas maracas virtuales en tu dispositivo móvil! Diviértete agitando tu teléfono y creando ritmos únicos.",color = Color.Black
         )
