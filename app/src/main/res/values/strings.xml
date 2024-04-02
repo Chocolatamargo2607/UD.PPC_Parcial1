@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">UD.PPC_Parcial1</string>
+    <string name="drums">Drums</string>
+    <string name="triangle">Triangle</string>
+    <string name="Maracas" />
+    <string name="maracas">Maracas</string>
+    <string name="touch">Touch</string>
 </resources>
