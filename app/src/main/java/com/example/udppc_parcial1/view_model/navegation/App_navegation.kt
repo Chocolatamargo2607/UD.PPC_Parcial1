@@ -18,7 +18,7 @@ fun App_navegation(){
     val navController = rememberNavController()
     NavHost(navController = navController,startDestination = App_screens.Index.router){
         composable(route = App_screens.Index.router){ Index(navController) }
-        composable(route = App_screens.Save_letter_screen.router){Save_letter_screen(navController)}
+      //  composable(route = App_screens.Save_letter_screen.router){Save_letter_screen(navController)}
         composable(route = App_screens.Practice_maraca_screen.router){Practice_maraca_screen(navController)}
         composable(route = App_screens.Practice_tambor_screen.router){Practice_tambor_screen(navController)}
         composable(route = App_screens.Read_letter_screen.router){Read_letter_screen(navController)}
