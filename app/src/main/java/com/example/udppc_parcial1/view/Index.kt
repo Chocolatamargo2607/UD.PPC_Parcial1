@@ -1,4 +1,4 @@
-package com.example.udppc_parcial1.view.ui.theme
+package com.example.udppc_parcial1.view
 
 
 import android.content.Intent
@@ -17,10 +17,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.magnifier
 import androidx.compose.ui.Modifier
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
@@ -52,7 +50,6 @@ import com.example.udppc_parcial1.dataManagement.Helper
 import com.example.udppc_parcial1.dataManagement.SongDTO
 import com.example.udppc_parcial1.dataManagement.SongService
 import com.example.udppc_parcial1.view_model.navegation.App_screens
-import kotlinx.coroutines.selects.select
 
 
 @OptIn(ExperimentalMaterial3Api::class)
